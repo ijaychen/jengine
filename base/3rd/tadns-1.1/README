@@ -1,0 +1,5 @@
+Tiny Asynchronous DNS lookup library (TADNS) is small portable library
+for asynchronous gethostbyname() alternative. It is written in ANSI C
+and works on UNIX and Windows.
+
+WWW:    http://adns.sourceforge.net
