@@ -10,11 +10,11 @@
 
 namespace gateserver
 {
-    class PlayerSession;
+    class GateSession;
     class Response
     {
     public:
-        Response ( PlayerSession& ps );
+        Response ( GateSession& ps );
         ~Response() {};
 
         void SetSession ( uint16_t session ) {
@@ -23,7 +23,7 @@ namespace gateserver
         //@reason 1.帐号在别处登录 2.服务器维护 3.检测到异常操作 4.内部错误
         void SendLogout ( uint8_t reason );
     private:
-        PlayerSession& ps_;
+        GateSession& ps_;
         uint16_t session_;
     };
 }

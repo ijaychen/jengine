@@ -2,7 +2,7 @@
 #include <base/global.h>
 #include <base/memory/memorypool.h>
 #include <base/gateway/gateway.h>
-#include "playersession.h"
+#include "gatesession.h"
 #include "sessionmanager.h"
 #include <boost/bind.hpp>
 #include <base/logger.h>
@@ -16,7 +16,7 @@ namespace gateserver
     class GatewayEventHandler : public Gateway::EventHandler
     {
         virtual bool HandleAcceptUserClient ( ClientPtr client ) {
-            PlayerSession* ps =  g_sessionManager->CreateSession ( client );
+            GateSession* ps =  g_sessionManager->CreateSession ( client );
             return ps != nullptr;			
         }
 

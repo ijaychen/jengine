@@ -6,7 +6,7 @@ add_executable(gateserver
 gatewaymanager.cpp
 gateserver.cpp
 gateengine.cpp
-playersession.cpp
+gatesession.cpp
 response.cpp
 sessionmanager.cpp
 )

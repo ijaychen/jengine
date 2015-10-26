@@ -4,7 +4,7 @@
 #include <base/utils/intrusive_list.h>
 #include <base/objectmaintainer.h>
 #include <boost/unordered_map.hpp>
-#include "playersession.h"
+#include "gatesession.h"
 
 namespace gateserver
 {
@@ -13,14 +13,14 @@ namespace gateserver
 	public:
 		static SessionManager * GetInstance();
 		//创建一个session
-		PlayerSession * CreateSession(base::gateway::UserClient* client);
-		void DeleteSession(PlayerSession* player);
+		GateSession * CreateSession(base::gateway::UserClient* client);
+		void DeleteSession(GateSession* player);
 		//关闭所有session
 		void DisconnectAllSession();
 	private:
 		SessionManager();
 	private:
-		base::utils::IntrusiveList<PlayerSession> players_;
+		base::utils::IntrusiveList<GateSession> players_;
 	};
 	extern SessionManager* g_sessionManager;
 }

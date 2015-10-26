@@ -19,9 +19,9 @@ namespace gateserver
 		
 	}
 	//创建一个session
-	PlayerSession * SessionManager::CreateSession(UserClient* client)
+	GateSession * SessionManager::CreateSession(UserClient* client)
 	{
-		PlayerSession* session = new PlayerSession ( client );
+		GateSession* session = new GateSession ( client );
 		if(nullptr == session)
 		{
 			LOG_ERROR ( "SessionManager:session init failed!\n" );
@@ -36,7 +36,7 @@ namespace gateserver
 			return nullptr;
 		}
 	}
-	void SessionManager::DeleteSession(PlayerSession* player)
+	void SessionManager::DeleteSession(GateSession* player)
 	{
 		players_.erase ( player );
 		player->Release();
@@ -44,7 +44,7 @@ namespace gateserver
 	//关闭所有session
 	void SessionManager::DisconnectAllSession()
 	{
-		PlayerSession* it = players_.front();
+		GateSession* it = players_.front();
 		while ( it ) {
 			it->GetResponse().SendLogout ( 2 );
 			it->Exit();

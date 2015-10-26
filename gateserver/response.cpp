@@ -1,5 +1,5 @@
 #include "response.h"
-#include "playersession.h"
+#include "gatesession.h"
 #include <base/gateway/packet.h>
 #include <base/gateway/userclient.h>
 
@@ -16,7 +16,7 @@ namespace gateserver
 
     ///Response
 
-    Response::Response ( PlayerSession& ps )
+    Response::Response ( GateSession& ps )
         :ps_ ( ps ) , session_ ( 0 )
     {
     }
